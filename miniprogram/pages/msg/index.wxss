@@ -1,0 +1,118 @@
+.head-title {
+  background: linear-gradient(to right, var(--clr2), var(--cl0));
+  height: 200rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx;
+  font-size: 25rpx;
+  color: #fff;
+}
+.head-title view {
+  color: #000;
+  line-height: 200rpx;
+  text-align: center;
+  
+}
+.hd {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  display: flex;
+  background: linear-gradient(to right, var(--clr2), var(--cl0));
+  box-shadow: 0 5rpx 5rpx #ccc;
+  position: relative;
+}
+
+.hd-item {
+  flex: 1;
+  text-align: center;
+  font-weight: 500;
+  color: #333;
+  font-size: 28rpx;
+  position: relative;
+}
+
+.hd-item::after {
+  content: '';
+  position: absolute;
+  /* 设置默认宽度为0 */
+  width: 0%;
+  height: 6rpx;
+  background: linear-gradient(to right, #fff, #000);
+  border-radius: 3rpx;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 4rpx;
+  /* 添加过渡效果 */
+  transition: 0.3s width linear;
+}
+
+/* 激活选中样式 */
+.hd-item.active {
+  font-size: 30rpx;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #000, #ddd);
+  transition: 0.3s all linear;
+  transition-delay: 0.1s;
+}
+
+.hd-item.active::after {
+  width: 40%;
+}
+
+.content .item {
+  background: #fff;
+  /* height: 50rpx; */
+  /* line-height: 50rpx; */
+  border-bottom: 3rpx solid #dddddd;
+  /* padding: 0 40rpx; */
+  margin: 10rpx 30rpx;
+  color: #999;
+  /* text-align: center; */
+  padding: 10rpx 50rpx;
+  border-radius: 15rpx;
+  display: flex;
+  flex-direction: row;
+}
+.sure {
+  line-height: 55rpx;
+  background-color: #000;
+  /* margin-right: -15%; */
+  /* margin-top: rpx; */
+  margin-bottom: 10rpx;
+  color: #dddddd;
+  border-radius: 20rpx;
+  width: 100rpx;
+  text-align: center;
+  margin-right: 15rpx;
+}
+.suref {
+  line-height: 65rpx;
+  background-color: #000;
+  /* margin-right: -15%; */
+  /* margin-top: rpx; */
+  margin-bottom: 10rpx;
+  color: #dddddd;
+  border-radius: 20rpx;
+  text-align: center;
+  margin-right: 30rpx;
+  width: 80rpx;
+}
+
+.content .item .message-text {
+  padding-left: 10rpx;
+}
+
+.content.pt {
+  padding-top: 88rpx;
+  /* nav的高度 */
+}
+
+.fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}

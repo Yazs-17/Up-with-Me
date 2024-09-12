@@ -1,0 +1,45 @@
+<!--pages/user/index.wxml-->
+  <view>
+  <view class = "related">
+    <view class="userImg" style="--t:'{{userInfo.nickName}}';">
+      <image src="{{userInfo.avatarUrl}}" mode=""/>
+    </view>
+    <view class="and" wx:if="{{partnerVisiblle}}">
+      <view wx:if="{{userInfo.partner != ''}}" class="dot"></view>
+    </view>
+    <view class="partnerImg" style="--t:'{{partnerInfo.nickName}}';" wx:if="{{partnerVisiblle}}">
+      <image src="{{partnerInfo.avatarUrl}}" mode=""/>
+    </view>
+  </view>
+</view>
+
+
+<!-- 信息获取口 -->
+<button class="partnerButton" bind:tap="get_2_Info">Partner</button>
+<!-- 信息获取口 -->
+
+<!-- Func-Menu -->
+<view class="Func_Menu_Circle">
+  <view></view>
+  <view class="container">
+    <view class="menu-box {{show_menu &&'active'}}">
+      <block wx:for="{{menu}}" wx:key="menu">
+        <view class="menu-box-item {{currIndex===index && 'active'}}" style="--n:{{index}};--deg:{{360/menu.length}}deg" data-index="{{index}}" catchtap="clickActive">
+          <view class="func" style="--deg:{{360/menu.length}}deg">{{item.name}}</view>
+        </view>
+      </block>
+      <view class="menu-box-active" style="--n:{{currIndex}};--deg:{{360/menu.length}}deg"></view>
+    </view>
+    <!-- 点击弹出菜单按钮 -->
+    <view class="menu-add-box {{show_menu &&'active'}}" catchtap="showMenu">
+      <view class="func">菜单</view>
+    </view>
+  </view>
+  <view></view>
+</view>
+
+<view class="funcButton" bind:tap="{{menu[currIndex].funcName}}">
+  <view>
+    {{menu[currIndex].name ? menu[currIndex].name : '功能按钮'}}
+  </view>
+</view>

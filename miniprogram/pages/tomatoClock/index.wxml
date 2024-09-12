@@ -1,0 +1,37 @@
+<!--index.wxml-->
+
+<!-- 选择任务页 -->
+<view hidden="{{isClock}}" class="wrap">
+    <view class="slider" wx:if="{{is_disabled}}">
+        <slider disabled="{{is_disabled}}" min="1" max="60" show-value activeColor="#dddddd" value="{{time}}" bindchange="slideChange"></slider>
+    </view>
+    <view class="slider" wx:if="{{!is_disabled}}">
+        <slider disabled="{{is_disabled}}" min="1" max="60" show-value activeColor="#FA8072" value="{{time}}" bindchange="slideChange"></slider>
+    </view>
+    <view class="text">
+        <view class="text_title">{{clockText}}</view>
+        <view class="text_desc">在接下来的{{time}}分钟，开始专注吧</view>
+    </view>
+    <view class="box_cate">
+        <view class="cate_item" wx:key="cate">
+            <view class="actionFont">
+                <view>Action!</view>
+            </view>
+        </view>
+        <view class="cate_text" bindtap="buttonChange">开始</view>
+    </view>
+</view>
+<!-- 番茄计时页 -->
+<view hidden="{{!isClock}}" class="clock">
+    <view class="clock_text">{{clockText}}中...</view>
+    <view class="count_down">
+        <canvas type="2d" id="circle" class="circle" ></canvas>
+        <canvas type="2d" id="circle_active" class="circle_active"></canvas>
+        <view class="count_text">{{timeStr}}</view>
+    </view>
+    <view class="clock_button">
+        <image src="../../images/pause.png" bindtap="handlePause" wx:if="{{playShow}}"></image>
+        <image src="../../images/play.png" bindtap="handlePlay" wx:else ></image>
+        <image src="../../images/suspend.png" bindtap="handleSuspend"></image>
+    </view>
+</view>

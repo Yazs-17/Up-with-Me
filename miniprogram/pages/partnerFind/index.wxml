@@ -1,0 +1,44 @@
+<!--pages/partnerFind/index.wxml-->
+<wxs module="util" src="../util.wxs" />
+
+<view class="outerMost" wx:if="{{showPercent}}">
+  <view class="cards_shell">
+    <view class="All_title">期待的占比</view>
+    <view class="desc" bind:tap="skip_to_desc">说明</view>
+    <view class="divider"></view>
+    <block wx:for="{{percentItems}}" wx:key="XXX">
+      <view class="card_cell_find" style="justify-content:space-between;">
+        <view>{{item}}</view>
+        <!-- <view data-index="{{index}}" style="color: var(--clr1);font-weight: bolder;">确定</view> -->
+      </view>
+      <slider disabled="{{0}}" style="margin-bottom: 55rpx;" activeColor="var(--clr1)" bindchange="checkSlidernums" show-value max="20" min="0" value="{{percent[index]}}" data-index="{{index}}"/>
+      <view class="divider"></view>
+    </block>
+    <button class="startSearch" bind:tap="hidePercentAndstartfinding">start</button>
+  </view>
+</view>
+<view wx:else>
+  <view class="bottlePos">
+    <view class="container">
+      <view class="profile-card">
+        <image class="avatar" src="{{partnerInfo.avatarUrl}}" mode="aspectFill"></image>
+        <view class="info">
+          <view class="email">用户名</view>
+          <text class="name">{{util.filterStr(partnerInfo.nickName ? partnerInfo.nickName:"???",8)}}</text>
+          <view class="email">Openid</view>
+          <view class="name">{{util.filterStr(partnerInfo.openid ? partnerInfo.openid:"???",8)}}</view>
+          <view class="email">押金</view>
+          <view class="name">{{partnerInfo.relatedIcon ? partnerInfo.relatedIcon : "???"}}</view>
+        </view>
+      </view>
+      <view class="profile-card">
+        <view class="info">
+          <view class="email">用户描述</view>
+          <view class="richText">{{partnerInfo.des}}</view>
+          <view class="divider" style="margin: 40rpx;"></view>
+          <button bind:tap="bemypartner">结为伙伴</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

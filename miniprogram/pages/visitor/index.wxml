@@ -1,0 +1,22 @@
+<!--pages/visitor/index.wxml-->
+<view style="margin-top: 120rpx;"></view>
+<view class="page">
+  <view class="login-container">
+    <view class="login-message">
+      <span>产</span>
+      <span>品</span>
+      <span>指</span>
+      <span>南</span>
+    </view>
+  </view>
+  <view style="display:flex;justify-content:space-around;">
+    <view></view>
+    <view bind:tap="skip_bank" class="pic_in" style="border-radius: 45rpx;height: 492rpx;width: 98%;font-family: '方正舒体';background-color: rgb(236, 214, 141);">
+      <image src="../../images/R.jpg" mode="top" />
+    </view>
+    <view></view>
+  </view>
+</view>
+<view bind:tap="navi">
+  <web-view style="margin-top:85rpx;display: flex;justify-content: center;font-size: 45rpx;font-weight: 900;margin-right: 85rpx;" src="http://www.yazs.top/282.html">www.yazs.top/282.html</web-view>
+</view>

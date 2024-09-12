@@ -1,0 +1,94 @@
+/* pages/addPublichabit/index.wxss */
+
+/* 存在个人习惯样式 */
+.title_main { 
+  align-self: flex-start;
+  margin: 20px;
+  color: #8D8D8D;
+  font-size: 15px;
+}
+.title_badge { 
+  position: relative;
+  top: -15rpx;
+  margin-left: 10rpx;
+  background-color: #f00;
+  color: #fff;
+  border-radius: 20rpx;
+  padding: 4rpx 8rpx;
+  font-size: 20rpx;
+}
+.msgspcial {
+  margin-top: 22rpx;
+  height: 100%;
+}
+.delete-msgspcial {
+  line-height: 80rpx;
+  background-color: #f04;
+  /* margin-right: -15%; */
+  margin-top: 10rpx;
+  color: #fff;
+  border-radius: 20rpx;
+  width: 100rpx;
+  text-align: center;
+}
+.add-msgspcial {
+  line-height: 80rpx;
+  background-color: #ffffff;
+  /* margin-right: -15%; */
+  margin-top: 10rpx;
+  color: #dddddd;
+  border-radius: 20rpx;
+  width: 100rpx;
+  text-align: center;
+}
+
+
+/* 没有个人习惯样式 */
+.span_Father{
+  margin-top: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 150rpx;
+  font-weight: bold;
+  line-height: 150rpx;
+  letter-spacing: 25rpx;
+  color: #ffffff;
+}
+.span_Father._1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 150rpx;
+  font-weight: bold;
+  line-height: 150rpx;
+  letter-spacing: 25rpx;
+  color: #ffffff;
+  transform-origin: 45% 42%;
+  transform: rotate(-18deg);
+}
+.span_Father span {
+  cursor: pointer;
+  text-shadow: 
+    0px 0px 2px #686868,
+    0px 1px 1px #ddd,
+    0px 2px 1px #d6d6d6,
+    0px 3px 1px #ccc,
+    0px 4px 1px #c5c5c5,
+    0px 5px 1px #c1c1c1,
+    0px 6px 1px #bbb,
+    0px 7px 1px #777,
+    0px 8px 3px rgba(100, 100, 100, 0.4),
+    0px 9px 5px rgba(100, 100, 100, 0.1),
+    0px 10px 7px rgba(100, 100, 100, 0.15),
+    0px 11px 9px rgba(100, 100, 100, 0.2),
+    0px 12px 11px rgba(100, 100, 100, 0.25),
+    0px 13px 15px rgba(100, 100, 100, 0.3);
+  transition: all .1s linear;
+}
+.span_Father span image{
+  height: calc(1rpx * var(--t));
+  width: calc(1rpx * var(--t));
+  position: relative;
+  top: 17rpx;
+}

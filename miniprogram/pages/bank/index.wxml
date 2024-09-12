@@ -1,0 +1,6 @@
+<!--pages/bank/index.wxml-->
+<view>
+  <view class="bankimg">
+    <image src="../../images/bank.png" mode=""/>
+  </view>
+</view>

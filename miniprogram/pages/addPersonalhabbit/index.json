@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "mp-checkbox":"../../miniprogram_npm/weui-miniprogram/checkbox/checkbox"
+  },
+  "navigationBarTitleText": "添加个人习惯"
+}

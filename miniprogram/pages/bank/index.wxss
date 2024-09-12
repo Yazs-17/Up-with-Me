@@ -1,0 +1,9 @@
+/* pages/bank/index.wxss */
+.bankimg {
+  display: flex;
+  justify-content: center;
+}
+.bankimg image{
+  height: 200rpx;
+  width: 200rpx;
+}

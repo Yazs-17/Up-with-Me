@@ -1,0 +1,62 @@
+<!--pages/userXinxi/index.wxml-->
+<view class="top_mask">
+  <view class="top_text">
+    伊人如镜君如霜
+  </view>
+</view>
+<view class="nav_head">
+  <block wx:for="{{navItems}}" wx:key="navItems">
+    <view class="nav_item {{now_nav_index==index && 'active'}}" catch:tap="changeIndex" data-index="{{index}}">
+      {{item}}
+    </view>
+  </block>
+</view>
+
+<!-- 头像昵称信息 -->
+
+<view wx:if="{{now_nav_index == 0}}">
+  <view class="bottlePos" style="margin-top: 50rpx;">
+    <view class="profile-card">
+      <image src="{{avatarUrl}}" />
+      <view class="btn-display">
+        <button bind:tap="changeAvator" class="smallFont">更改</button>
+        <button bind:tap="backAvator" class="smallFont">Back</button>
+      </view>
+      <view class="divider" style="margin: 50rpx;"></view>
+      <view class="largeFont">昵称</view>
+      <!-- <view class="largeFont">{{nickName}}</view> -->
+      <input class="input-center" placeholder="输入你想填入的昵称~" value="{{nickName}}" bindinput="onInputname" />
+      <view class="btn-display">
+        <button bind:tap="upLoadInfoname" style="padding: 0;">确定</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 金币描述信息 -->
+
+<view wx:if="{{now_nav_index == 1}}">
+  <view class="bottlePos" style="margin-top: 35rpx;">
+    <view class="profile-card">
+      <view class="largeFont">押金</view>
+      <view class="picker-mon" wx:if="{{1}}">
+        <picker-view style="height: 100px;" value="{{value}}" bindchange="bindmoneyChange">
+          <picker-view-column>
+            <view wx:for="{{money}}" wx:key="money" class="colPicker">{{item}}元</view>
+          </picker-view-column>
+        </picker-view>
+      </view>
+      <!-- <view class="email">{{relatedIcon}}</view> -->
+      <button bind:tap="submitIcon" class="smallFont" style="color: red;">更改</button>
+      <view class="divider"></view>
+      <view class="largeFont">个人描述</view>
+      <view class="textarea-wrp">
+        <textarea value="{{des}}" maxlength="150" bindblur="bindDeschange" auto-height placeholder="在这里输入您给自己写的描述吧o(*≧▽≦)ツ┏━┓" />
+      </view>
+      <view class="smallFont">点击外部任意位置即可提交</view>
+    </view>
+  </view>
+  <!-- <view wx:for="{{cate}}" wx:key="cate">
+    {{item}}
+  </view> -->
+</view>

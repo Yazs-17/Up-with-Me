@@ -1,0 +1,27 @@
+/* pages/oneSentence/index.wxss */
+.yiyan{
+  position: relative;
+  top: 100rpx;
+  display: flex;
+  justify-content: center;
+}
+.yiyan .container{
+  box-shadow: 0 0 5px black;
+  padding: 8rpx;
+  height: 310rpx;
+  width: 600rpx;
+  text-shadow: 2px 2px 6px #555555;
+  /* border: 15rpx dashed #333; */
+  font-weight: 700;
+  border-radius: 10rpx;
+  /* padding: 2rpx; */
+}
+.yiyan .container::after{
+  content: var(--t);
+  position: relative;
+  top: 25rpx;
+  left: 200rpx;
+  box-shadow: 0 0 5px black;
+  border-radius: 10rpx;
+  /* border: 15rpx dashed #333; */
+}

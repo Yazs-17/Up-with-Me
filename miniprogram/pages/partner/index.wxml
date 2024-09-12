@@ -1,0 +1,24 @@
+<!--pages/partner/index.wxml-->
+<wxs module="util" src="../util.wxs" />
+
+<view class="bottlePos">
+  <view class="container">
+    <view class="profile-card">
+      <image class="avatar" src="{{partnerInfo.avatarUrl}}" mode="aspectFill"></image>
+      <view class="info">
+        <view class="email">用户名</view>
+        <text class="name">{{util.filterStr(partnerInfo.nickName ? partnerInfo.nickName:"???",8)}}</text>
+        <view class="email">Openid</view>
+        <view class="name">{{util.filterStr(partnerInfo.openid ? partnerInfo.openid:"???",8)}}</view>
+        <view class="email">押金</view>
+        <view class="name">{{partnerInfo.relatedIcon ? partnerInfo.relatedIcon : "???"}}</view>
+      </view>
+    </view>
+    <view class="profile-card">
+      <view class="info">
+        <view class="email">用户描述</view>
+        <rich-text nodes="{{nodes}}"></rich-text>
+      </view>
+    </view>
+  </view>
+</view>

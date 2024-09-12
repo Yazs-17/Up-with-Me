@@ -1,0 +1,92 @@
+<!--pages/partnerFunc/index.wxml-->
+<wxs module="util" src="../util.wxs" />
+<view class="top_mask">
+  <view class="top_text">
+    {{words}}
+  </view>
+</view>
+<view class="nav_head">
+  <block wx:for="{{navItems}}" wx:key="navItems">
+    <view class="nav_item {{now_nav_index==index && 'active'}}" catch:tap="changeIndex" data-index="{{index}}">
+      {{item}}
+    </view>
+  </block>
+</view>
+<view wx:if="{{now_nav_index == 0}}">
+  <!-- /* 状态一：没有partner模式 */ -->
+  <view wx:if="{{!partnerInfo}}">
+    <view class="span_Father _1">
+      <span>伙</span>
+      <span>伴</span>
+      <span>呢</span>
+      <span>?</span>
+    </view>
+    <view bind:tap="skipFindpartner" style="margin-left: 40%;font-size:50rpx;--t: 50;" class="span_Father">
+      <span>.</span>
+      <span>.</span>
+      <span>.</span>
+      <span>找</span>
+      <span>一</span>
+      <span>个</span>
+      <span>
+        <image src="../../images/next.png" />
+      </span>
+    </view>
+  </view>
+  <!-- /* 状态二：有partner模式 */ -->
+  <view wx:else>
+    <scroll-view scroll-y="1" class="scroll-box">
+      <view>
+        <view class="title_main">
+          未完成的习惯
+        </view>
+        <view class="title_badge">
+          <text>{{util.msgFilter(cnt,10)}}</text>
+        </view>
+        <view wx:for="{{pub_habit}}" wx:key="pub_habit">
+          <view class="item" bind:tap="skip_checck_habit" data-id="{{index}}" wx:if="{{!item.freq}}">
+              <view class="message-content">
+                <view class="nickname">{{item.habitName}}</view>
+                <view class="message-text" style="margin-left: 15rpx;">{{util.filterStr(item.target,15)}}</view>
+              </view>
+              <view data-time="{{item.time}}" data-title="{{item.habitName}}" data-_id="{{item._id}}" catch:tap="skip_to_tomato" class="sure">开始</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<view wx:if="{{now_nav_index == 1}}">
+  <scroll-view scroll-y="1" class="scroll-box">
+    <view wx:for="{{pri_habit}}" wx:key="pri_habit">
+      <view class="item" bind:tap="skip_checck_habit" data-id="{{index}}">
+        <view class="message-content">
+          <view class="nickname">{{item.habitName}}</view>
+          <view class="message-text" style="margin-left: 15rpx;">{{util.filterStr(item.target,15)}}</view>
+        </view>
+        <view data-time="{{item.time}}" data-title="{{item.habitName}}" data-_id="{{item._id}}" catch:tap="pri_skip_to_tomato" class="sure">Action</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+
+<!-- 全局遮罩 -->
+<view class="all_in_mask" wx:if="{{is_add}}"></view>
+<!-- 右下角footer -->
+<view>
+  <image class="footer-select" src="{{is_add?'../../images/habbitCanvel.png':'../../images/habbitWrite.png'}}" bindtap="changeIS_ADD">
+  </image>
+  <view class="footer-item" wx:if="{{is_add && partnerInfo}}" style="bottom: 650rpx;" bind:tap="addPublichabit">
+    <view class="footer-name">添加共同习惯</view>
+    <view class="footer-icon"></view>
+  </view>
+  <view class="footer-item" wx:if="{{is_add && partnerInfo}}" style="bottom: 530rpx;" bind:tap="skip_partner">
+    <view class="footer-name">查看同伴情况</view>
+    <view class="footer-icon" style="color: red;">XX</view>
+  </view>
+  <view class="footer-item" wx:if="{{is_add}}" bind:tap="addPersonalhabbit">
+    <view class="footer-name">添加独立习惯</view>
+    <view class="footer-icon"></view>
+  </view>
+</view>

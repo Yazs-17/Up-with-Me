@@ -1,0 +1,35 @@
+<!--pages/start/index.wxml-->
+
+<view class="body">
+  <view class="extern {{b_2 && 'active'}}">
+    <view id="extern" class="btn" style="--opa:{{opa}};" bind:tap="skip">
+      START
+    </view>
+  </view>
+  <view id="book" class="book {{b_0 && 'active'}}" bind:tap="tapBook">
+    <view class="sheet1 {{b_1 && 'active'}}" style="--x:1;">
+      <text>
+
+      ————
+        “一次习惯
+      </text>
+    </view>
+    <view class="sheet2 {{b_1 && 'active'}}" style="--x:2;">
+      <text>
+
+
+
+      就是一句
+      </text>
+    </view>
+    <view class="sheet3 {{b_1 && 'active'}}" style="--x:3;"></view>
+    <view class="sheet4 {{b_1 && 'active'}}" style="--x:4;"></view>
+    <view class="sheet5 {{b_2 && 'active'}}" style="--x:5;"></view>
+  </view>
+</view>
+<view class="funcBtn">
+  <view class="login-buttons">
+    <view class="login-button" bindtap="enterRightnow">直接进入</view>
+    <view class="login-button" bind:tap="skip_visitor">使用说明</view>
+  </view>
+</view>

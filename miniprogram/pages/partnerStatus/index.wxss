@@ -1,0 +1,17 @@
+/* pages/partnerStatus/index.wxss */
+/* index.wxss */
+.slider-container {
+  width: 300px; /* 容器宽度 */
+  height: 30px; /* 容器高度 */
+  background-color: #f0f0f0; /* 容器背景色 */
+  position: relative;
+  border-radius: 15px; /* 边框圆角 */
+}
+
+.slider-bar {
+  width: 30px; /* 拉杆宽度 */
+  height: 30px; /* 拉杆高度 */
+  background-color: #007AFF; /* 拉杆颜色 */
+  position: absolute;
+  border-radius: 15px; /* 边框圆角 */
+}

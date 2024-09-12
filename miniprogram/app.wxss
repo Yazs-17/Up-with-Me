@@ -1,0 +1,185 @@
+/**app.wxss**/
+@import "./util//icon/ico.wxss";
+
+:root{
+  --barHeight:150rpx;
+}
+page {
+  --clr0:#2f6f8f;
+  --clr1:#c49866;
+  --clr2:#fed8b1;
+  --clr3:#f8e3cf;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+} 
+button {
+  background: initial;
+}
+button:focus{
+  outline: 0;
+}
+button::after{
+  border: none;
+}
+page {
+  /* background: #f8e3cf; */
+  background-image: linear-gradient(120deg, #fed8b1 0%, #fdf1e3 50%,#e4ddb4 100%);
+  /* background-image: linear-gradient(); */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+/* 个人名片式 */
+.bottlePos {
+  display: flex;
+  justify-content: center;
+  margin-top: 150rpx;
+}
+.container {
+  position: absolute;
+  align-items: center;
+  /* height: 100vh; */
+  background-color: #f0f0f0;
+  height: auto;
+
+}
+
+.profile-card {
+  width: 500rpx;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.info {
+  width: 100%;
+}
+
+.name {
+  /* align-items: center; */
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 5px;
+}
+
+.email {
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  color: #666666;
+}
+
+/* 消息卡式 */
+/* 最外层 */
+.message-container {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  padding:0 75rpx;
+  
+}
+.message-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10rpx;
+}
+.message-index {
+  height: 80rpx;
+  width: 80rpx;
+  /* border: 2rpx black solid; */
+  font-size: 80rpx;
+  font-weight: 900;
+}
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.message-content {
+  flex: 1;
+}
+.nickname {
+  font-size: 29rpx;
+  font-weight: bold;
+  color: #333;
+}
+.message-text {
+  font-size: 23rpx;
+  color: #666;
+  margin-top: 10rpx;
+}
+.divider {
+  height: 1rpx;
+  background-color: #eaeaea;
+  width: 100%;
+  margin: 10rpx 0;
+}
+.delete{
+  line-height: 30rpx;
+  padding: 10rpx 20rpx;
+  background-color: #f04;
+  color: white;
+  border-radius: 20rpx;
+  font-size: 16rpx;
+  cursor: pointer;
+}
+
+/* 选项卡式 */
+/* 最外层 */
+.outerMost{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* 内部壳 */
+.cards_shell {
+  width: calc(100% - 40px);
+  margin: 10px 20px;
+  border-radius: 10px;
+  background: white;
+}
+/* 多数卡片 */
+.card_cell {
+  padding: 20px 15px;
+}
+.card_cell_title {
+  margin-bottom: 10px;
+  font-size: medium;
+  justify-content: space-around;
+}
+.card_cell_title-placeholder {
+  font-size: small;
+  color: lightgray;
+}
+.card_cell:not(:last-child) {
+  border-bottom: rgba(0, 0, 0, 0.05) solid 1px;
+}
+.card_cell.inline {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}

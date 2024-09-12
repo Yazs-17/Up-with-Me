@@ -1,0 +1,4 @@
+<!--pages/desc/index.wxml-->
+<view style="color: var(--clr1);font-weight: 800;">
+ 开发中。。。
+</view>

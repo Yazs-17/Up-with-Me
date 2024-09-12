@@ -1,0 +1,8 @@
+<!--pages/color/index.wxml-->
+<!-- <text>pages/color/index.wxml</text> -->
+
+<view>
+  <view class="colorView"></view>
+  <view class="colorView2"></view>
+  <view class="colorView3"></view>
+</view>

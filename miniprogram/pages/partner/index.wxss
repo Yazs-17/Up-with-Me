@@ -1,0 +1,16 @@
+/* pages/partner/index.wxss */
+
+/* 富文本聚集器 */
+.richText {
+  display: block;
+  text-align: justify;
+  text-indent: 2em;
+}
+
+.richText::first-letter {
+  float: left;
+  font-size: 60rpx; /* 首字下沉的字体大小 */
+  line-height: 60rpx;
+  padding-right: 10rpx; /* 首字右侧的间距 */
+  margin-top: -10rpx;
+}

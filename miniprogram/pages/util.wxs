@@ -1,0 +1,13 @@
+
+var filterStr = function (str, limit) {
+  return str.length > limit ? str.substring(0, limit) + "..." : str
+}
+
+var msgFilter = function (int, limit) {
+  return int > limit ? limit.toString() + "+" : int
+}
+
+module.exports = {
+  filterStr: filterStr,
+  msgFilter: msgFilter
+}

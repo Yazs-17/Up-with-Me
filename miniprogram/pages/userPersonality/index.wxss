@@ -1,0 +1,60 @@
+/* pages/userInfoWrite/index.wxss */
+.title_personal {
+  font-weight: 800;
+  padding: 15rpx;
+  font-size: larger;
+  font-family: "";
+}
+.wx-slider-thumb {
+  height: 26rpx!important;
+  width: 26rpx!important;
+  /* left: 10rpx!important; */
+}
+.form{
+  padding: 15rpx;
+  box-shadow: 1rpx 5rpx 1rpx 15px  rgba(223, 184, 100, 0.55);
+  /* border: 10rpx solid black; */
+
+}
+.cate {
+  font-weight: 900;
+  font-size: larger;
+  /* align-items: center; */
+  text-align: center;
+  margin: 50rpx auto;
+}
+.title{
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  margin: 15rpx;
+}
+.list-box{
+  display: flex;
+  flex-direction: column;
+  padding: 10rpx 10rpx;
+}
+/* picker */
+.pickerBox {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 150rpx;
+}
+.picker-mon {
+  /* z-index: 3; */
+  width: 350rpx;
+  height: 100rpx;
+}
+.colPicker {
+  font-weight: 900;
+  align-items: center;
+  text-align: center;
+  font-size: 60rpx;
+  line-height: 60rpx;
+}
+/* the_last_button */
+.submit{
+  font-size: 60rpx;
+  margin-bottom: 150rpx;
+  border: 10rpx solid black;
+}

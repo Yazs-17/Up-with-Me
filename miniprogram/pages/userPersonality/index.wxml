@@ -1,0 +1,57 @@
+<!--pages/userInfoWrite/index.wxml-->
+<view style="text-align: center;margin: 20rpx;">
+  <view class="title_personal">
+    为更好地为您提供良好的伙伴匹配服务
+  </view>
+  <view class="title_personal" style="text-align: center;">
+    请您耐心填写以下信息
+  </view>
+</view>
+<view class="form">
+  <view>
+    <view class="cate">一、性格特征</view>
+    <view wx:for="{{personalityItems}}" wx:key="personality" wx:for-item="personality">
+      <text class="title">{{personality.name}}</text>
+      <slider class="handle" min="0" max="10" activeColor="#000" show-value bindchange="bindSliderchange" value="{{userPersonality[1][index]}}" data-index="{{index}}" />
+      <view>注意：评分标准</view>
+      <view class="list-box">
+        <block wx:for="{{personality.points}}" wx:key="points">
+          <view class="list-element-item">{{item}}</view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class="cate">二、希望培养的习惯</view>
+    <view class="title">习惯类别选取</view>
+    <view class="pickerBox">
+      <view class="picker-mon">
+        <picker-view style="height: 100px;" value="{{value}}" bindchange="bindcateChange">
+          <picker-view-column>
+            <view wx:for="{{habitCate}}" wx:key="hhhcate" class="colPicker">{{item}}</view>
+          </picker-view-column>
+        </picker-view>
+      </view>
+    </view>
+    <view class="title" style="margin-top: 100rpx;">习惯具体选取</view>
+    <view class="pickerBox">
+      <view class="picker-mon">
+        <picker-view style="height: 100px;" value="{{value_habit}}" bindchange="bindhabitChange">
+          <picker-view-column>
+            <view wx:for="{{habits}}" wx:key="habits" class="colPicker">{{item.habitName}}</view>
+          </picker-view-column>
+        </picker-view>
+      </view>
+    </view>
+    <view>
+      <!-- 注意：待所有习惯培养完成后，才算伙伴关系完结 -->
+    </view>
+  </view>
+  <!-- <view>
+    <view class="cate" style="margin-top:105rpx ;">三、希望一次押金的数目</view>
+    <view class="title">押金数目</view>
+    <slider bindchange="" />
+    <view>注意：完成任务后，获得的奖金将是押金的 0.5%  </view>
+  </view> -->
+</view>
+<button class="submit" bind:tap="all_submit">提交</button>

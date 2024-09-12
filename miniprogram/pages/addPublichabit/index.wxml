@@ -1,0 +1,56 @@
+<wxs module="util" src="../util.wxs" />
+<view wx:if="{{privateHabits.length == 0}}">
+  <view class="span_Father _1">
+    <span>习</span>
+    <span>惯</span>
+    <span>呢</span>
+    <span>?</span>
+  </view>
+  <view bind:tap="skipAddPublichabit" style="margin-left: 40%;font-size:50rpx;--t: 50;" class="span_Father">
+    <span>.</span>
+    <span>.</span>
+    <span>.</span>
+    <span>创</span>
+    <span>一</span>
+    <span>个</span>
+    <span>
+      <image src="../../images/next.png" />
+    </span>
+  </view>
+</view>
+
+<view>
+  <view class="title_main">
+    个人习惯列表
+    <text class="title_badge">{{util.msgFilter(privateHabits.length,10)}}</text>
+  </view>
+  <view class="message-container" wx:if="{{privateHabits.length > 0}}">
+    <block wx:for="{{privateHabits}}" wx:for-item="item" wx:key="preHabits">
+      <view class="message-item" style="margin-left: 5%;" bind:tap="skipeditHabit" data-index="{{index}}">
+        <view class="message-index">{{index + 1}}</view>
+        <view class="message-content msgspcial">
+          <view class="nickname">
+            {{util.filterStr(privateHabits[index].habitName,10)}}
+          </view>
+          <view class="message-text">
+            {{util.filterStr(privateHabits[index].target,10)}}
+          </view>
+        </view>
+        <view style="display: flex;flex-direction: row;" wx:if="{{!item.is_Pub}}">
+          <view class="add-msgspcial"data-index="{{index}}" catch:tap="add_pub">
+             设为
+          </view>
+          <view style="margin-left:50rpx;" class="delete-msgspcial" data-index="{{index}}" catch:tap="del_pri">
+             删除
+          </view>
+        </view>
+        <view wx:else>
+          <view style="margin-left:50rpx;width: 250rpx;" class="add-msgspcial" data-index="{{index}}">
+             已发送申请
+          </view>
+        </view>
+      </view>
+      <view class="divider"></view>
+    </block>
+  </view>
+</view>

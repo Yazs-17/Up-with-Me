@@ -1,0 +1,6 @@
+<!--pages/oneSentence/index.wxml-->
+<view class="yiyan">
+  <scroll-view class="container" style="--t:'{{moto.origin}}'" scroll-y>
+    {{moto.content}}
+  </scroll-view>
+</view>

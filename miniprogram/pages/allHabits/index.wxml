@@ -1,0 +1,17 @@
+<!--pages/allHabits/index.wxml-->
+<view class="container-hbt">
+  <view class="img">
+    <view></view>
+    <image src="../../images/allHabits.png" mode=""/>
+    <view></view>
+  </view>
+  <block wx:for="{{habits}}" wx:key="habits">
+    <view class="item" bind:tap="skip_checck_habit" data-id="{{index}}">
+      <view class="message-content">
+       <view class="nickname {{item.partner && 'ch-color'}}">{{item.habitName}}</view>
+       <view class="message-text" style="margin-left: 15rpx;">{{item.target}}</view>
+      </view>
+      <view></view>
+    </view>
+  </block>
+</view>

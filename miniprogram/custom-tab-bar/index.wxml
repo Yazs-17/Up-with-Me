@@ -1,0 +1,21 @@
+<!--custom-tab-bar/index.wxml-->
+<view class="tabBar">
+  <block wx:for="{{tablist}}" wx:key="tabs">
+    <!-- center Main -->
+    <view class="tabBar_tab_center {{nowSelected==index && 'active'}}" wx:if="{{index==1}}" data-tab="{{item.tabPath}}" data-index="{{index}}" bind:tap="skipTab">
+      <view class="plus">
+        <view class="horizontal left"></view>
+        <view class="horizontal right"></view>
+        <view class="point"></view>
+        <view class="vertical top"></view>
+        <view class="vertical bottom"></view>
+      </view>
+      <view class="tabBar_bottom_text_center">{{item.text[partnerStatus]}}</view>
+    </view>
+    <!-- oop -->
+    <view class="tabBar_tab {{nowSelected==index && 'active'}}" wx:else data-tab="{{item.tabPath}}" data-index="{{index}}" bind:tap="skipTab">
+      <view class="icontext_css">{{item.icontext}}</view>
+      <view class="tabBar_bottom_text">{{item.text}}</view>
+    </view>
+  </block>
+</view>

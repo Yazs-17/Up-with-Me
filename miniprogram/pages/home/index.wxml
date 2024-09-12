@@ -1,0 +1,103 @@
+<!--pages/home/index.wxml-->
+
+
+<view style="margin-left: 7%;margin-top: 16%;">
+  <view>
+    <text style="font-weight: 900; font-size: 50rpx;">
+      Good
+    </text>
+  </view>
+  <view style="font-weight: 900;font-size: 50rpx;">
+    {{time}}
+  </view>
+</view>
+<view class="func_class">
+  <view wx:for="{{func}}">
+    <view wx:if="{{index == 1}}">
+      <view style="color: black;">
+        {{item}}
+      </view>
+    </view>
+    <view wx:else>
+      {{item}}
+    </view>
+  </view>
+</view>
+<view class="container" wx:if="{{bulbSwitch}}">
+  <view class="lightBulb"></view>
+</view>
+<view class="title-center">
+  <view class="title">
+    <text style="padding: 0 auto;margin: 0 auto;">家里的功能</text>
+    <view style="display:flex;flex-direction: row;justify-content: space-around;padding:0 0rpx;">
+      <view class="up_down_icon" style="background-color: rgb(245, 245, 244);height: 55rpx;width: 55rpx;">
+        <image src="../../images/up.png" mode=""/>
+      </view>
+      <view class="up_down_icon" style="background-color: rgb(245, 245, 244);height: 55rpx;width: 55rpx;">
+        <image src="../../images/down.png" mode=""/>
+      </view>
+    </view>
+    <view style="display:flex;flex-direction: row;justify-content: space-around;margin-top: 60rpx;">
+      <view class="funcModule" style="border-radius: 18rpx;background-color: white;height: 85rpx;width: 85rpx;">
+        <image src="../../images/sun.png" mode=""/>
+      </view>
+      <view bind:tap="skip_partner" class="funcModule" style="border-radius: 18rpx;background-color: var(--clr3);height: 85rpx;width: 85rpx;">
+        <image src="../../images/home_p.png" mode=""/>
+      </view>
+      <view>
+        <view wx:if="{{!bulbSwitch}}">
+          <view bind:tap="switch" class="funcModule" style="border-radius: 18rpx;background-color: black;height: 85rpx;width: 85rpx;">
+            <image src="../../images/Swi_w (1).png" mode=""/>
+          </view>
+        </view>
+        <view wx:else>
+          <view bind:tap="switch" class="funcModule" style="border-radius: 18rpx;background-color: white;height: 85rpx;width: 85rpx;">
+            <image src="../../images/Swi_w (2).png" mode=""/>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view style="display: flex;justify-content: space-around; margin-top: 25rpx;">
+  <view bind:tap="skip_all_habits" class="pic_in" style="border-radius: 45rpx;margin-left:42rpx;height: 250rpx;width: 44%;background-color: rgb(236, 210, 140);">
+    <!-- <image src="../../images/OIP.jpg" mode="top left"/> -->
+    <view style="position: absolute;margin-top: 70rpx;font-weight: 900;color: var(--clr1);font-family: '方正舒体';margin-left: 56rpx;font-size: 55rpx;">我的习惯</view>
+  </view>
+  <view bind:tap="skip_bank" class="pic_in" style="border-radius: 45rpx;margin-right:42rpx;height: 250rpx;width: 44%;font-family: '方正舒体';background-color: rgb(199, 189, 105);">
+    <!-- <image src="../../images/OIP.jpg" mode="top"/> -->
+    <view style="position: absolute;margin-top: 70rpx;font-weight: 900;color: var(--clr0);margin-left: 56rpx;font-size: 55rpx;">我的收益</view>
+  </view>
+  <!-- <view></view>s -->
+</view>
+<view class="pic_out" style="display: flex;justify-content: space-around; margin-top: 5rpx;">
+  <view style="border-radius: 45rpx;margin-left:42rpx;height: 350rpx;width: 44%;background-color: rgb(224, 218, 136);">
+    <!-- <image src="../../images/OIP.jpg" mode="bottom left"/> -->
+    <view style="position: absolute;margin-top: 120rpx;font-weight: 900;color: rgb(73, 66, 42);font-family: '华文行楷';margin-left: 56rpx;font-size: 55rpx;">更多功能</view>
+  </view>
+  <view style="border-radius: 45rpx;margin-right:42rpx;height: 350rpx;width: 44%;background-color: rgb(223, 221, 115);">
+    <!-- <image src="../../images/OIP.jpg" mode="bottom"/> -->
+    <view style="position: absolute;margin-top: 120rpx;font-weight: 900;color: rgb(53, 41, 27);font-family: '华文行楷';margin-left: 56rpx;font-size: 55rpx;">敬请期待</view>
+  </view>
+  <!-- <view></view>s -->
+</view>
+
+<!-- <view class="moduleBox">
+  <view bind:tap="skip_all_habits">
+    <image src="../../images/habitManage.png" mode="" />
+    <view>我的习惯</view>
+  </view>
+  <view bind:tap="skip_bank">
+    <image src="../../images/income.png" mode="" />
+    <view>我的收益</view>
+  </view>
+</view> -->
+<view class="moduleBox">
+  <!-- <view bind:tap="">
+    <view>我的位置</view>
+  </view>
+  <view bind:tap="">
+    <view>我的一言</view>
+  </view> -->
+</view>
+

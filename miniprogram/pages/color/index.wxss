@@ -1,0 +1,22 @@
+/* pages/color/index.wxss */
+.colorView {
+  height:100rpx;
+  width: 100rpx;
+  display: flex;
+  justify-content: center;
+  background-color: #2f6f8f;
+}
+.colorView2 {
+  height:100rpx;
+  width: 100rpx;
+  display: flex;
+  justify-content: center;
+  background-color: #f79f77;
+}
+.colorView3 {
+  height:100rpx;
+  width: 100rpx;
+  display: flex;
+  justify-content: center; 
+  background-color: var( --zang );
+}

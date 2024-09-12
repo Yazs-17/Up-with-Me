@@ -1,0 +1,96 @@
+/**index.wxss**/
+page{
+  background-color: #fef2f1;
+}
+.wrap{
+  margin: 100rpx auto;
+}
+.slider{
+  width: 600rpx;
+  margin:150rpx auto;
+}
+.text{
+  text-align: center;
+}
+.text .text_title{
+  font-size: 40rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.text .text_desc{
+  font-size: 30rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.box_cate{
+  display: flex;
+  justify-content: center;
+  width: 100rpx;
+  flex-wrap: wrap;
+  margin:100rpx  auto;
+}
+.box_cate .cate_item{
+  text-align: center;
+}
+.box_cate .cate_item .actionFont{
+  height: 100rpx;
+  font-weight: 800;
+  font-size: 60rpx;
+}
+.cate_text{
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-weight: 800;
+  background-color: #FA8072;
+  width: 100rpx;
+  border-radius: 15rpx;
+  color: #fef2f1;
+}
+
+
+/* 番茄计时页 */
+.clock{
+  background-color: #FA8072;
+  height: 100vh;
+  overflow: hidden;
+}
+.clock_button{
+  display: flex;
+  width: 300rpx;
+  flex-wrap: wrap;
+  margin:auto;
+}
+.clock_button image{
+  width: 50rpx;
+  height: 50rpx;
+  margin: 50rpx;
+}
+.count_down{
+  /* background-color: royalblue; */
+  width: 400rpx;
+  height: 400rpx;
+  margin:50rpx auto 50rpx auto;
+  position: relative;
+}
+.count_down .circle,.count_down .circle_active{
+  position: absolute;
+  width: 400rpx;
+  height: 400rpx;
+}
+.clock_text{
+  margin-top: 200rpx;
+  text-align: center;
+  color: #ffffff;
+}
+.count_down .count_text{
+  position: absolute;
+  left: 100rpx;
+  top: 170rpx;
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 50rpx;
+  text-align: center;
+  color: #ffffff;
+}

@@ -1,0 +1,89 @@
+/* pages/userXinxi/index.wxss */
+.top_mask {
+  background-image: linear-gradient(to right , rgb(241, 241, 241) ,lightblue );
+  height: 150rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+.top_mask .top_text {
+  line-height: 100rpx;
+  font-size: 35rpx;
+  color: lightblue;
+  font-family: "华文行楷";
+  text-align: center;
+}
+.nav_head {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  display: flex;
+  background: #fff;
+  box-shadow: 0 5rpx 5rpx #ccc;
+}
+.nav_item {
+  flex: 1;
+  text-align: center;
+  font-weight: 600;
+  color: #dddddd;
+}
+.nav_item.active {
+  font-size: 30rpx;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%);
+  transition: 0.3s all linear;
+  transition-delay: 0.1s;
+}
+/* 头像昵称信息 */
+
+.bottlePos image {
+  height: 200rpx;
+  width: 200rpx;
+  border-radius: 10rpx;
+}
+.btn-display {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50rpx;
+}
+
+.smallFont {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  color: #666666;
+}
+
+.largeFont {
+  font-weight: bolder;
+  font-size: 50rpx;
+}
+.input-center {
+  text-align: center; /* 设置文本居中 */
+  height: 40px; /* 设置输入框的高度，根据需要调整 */
+  line-height: 40px; /* 设置行高以垂直居中文本，确保与输入框高度一致 */
+}
+textarea {
+  position: relative;
+  right: 19%;
+  width: 450rpx;
+  margin: 9%;
+}
+.textarea-wrp {
+  margin-left:25%;
+  text-align: center;
+}
+.picker-mon {
+  /* z-index: 3; */
+  width: 150rpx;
+  height: 150rpx;
+}
+.colPicker {
+  font-weight: 900;
+  align-items: center;
+  text-align: center;
+  font-size: 30rpx;
+  /* line-height: 20rpx; */
+}

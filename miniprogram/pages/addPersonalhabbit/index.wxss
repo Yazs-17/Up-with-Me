@@ -1,0 +1,118 @@
+/* pages/addPersonalhabbit/index.wxss */
+/* text area */
+.mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #787878;
+  opacity: 0.8;
+  z-index: 99;
+}
+.submitModal {
+  z-index: 99;
+  position: absolute;
+  margin: 15% 25%;
+  font-weight: 800;
+  border: 4rpx solid;
+  padding: 12rpx;
+  border-radius: 15rpx;
+}
+.mainBody {
+  z-index: 99;
+  position: absolute;
+  top: 5%;
+}
+textarea {
+  width: 450rpx;
+  min-height: 300rpx;
+}
+.textarea-wrp {
+  margin:25%;
+  padding: 25rpx 25rpx;
+  background-color: #fff;
+  width: 450rpx;
+  min-height: 300rpx;
+  border-radius: 15rpx;
+}
+
+/* Time line */
+.line-container {
+  display: flex;
+  align-items: center;
+  margin: 12% 5%;
+}
+.point {
+  width: 20rpx; 
+  height: 20rpx;
+  border-radius: 50%;
+  background-color: #dddddd;
+}
+.point::after {
+  content: var(--t);
+  height: 12rpx;
+  width:12rpx;
+  position: relative;
+  top: calc(var(--idx) * 35rpx);
+}
+.line {
+  flex-grow: 1;
+  height: 4rpx;
+  background-color: #dddddd;
+}
+.active {
+  background-color: #000;
+}
+
+/* Submit-button  */
+.footer {
+  width: 100%;
+  height: 10vh;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  border-top: lightgray solid 1px;
+}
+
+.footer view {
+  width: 50%;
+  height: 100%;
+  padding-top: 2vh;
+  text-align: center;
+}
+
+.reset {
+  background: white;
+  color: #2f6f8f;
+}
+
+.save {
+  color: white;
+  background: #c49866;
+}
+
+/* checkbox - custom - design */
+wx-checkbox-input.wx-checkbox-input-checked::before{
+  width: 100%;
+  color: #000;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+  border: none;
+  background: #000;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  border-radius: 50%;
+  text-align: center;
+  font-size:32rpx; 
+  color:#FFF; 
+  background: transparent;
+  transform:translate(-50%, -50%) scale(1);
+  -webkit-transform:translate(-50%, -50%) scale(1);
+}
+checkbox .wx-checkbox-input{
+  width: 40rpx; 
+  height: 40rpx; 
+  border-radius: 50%;
+}

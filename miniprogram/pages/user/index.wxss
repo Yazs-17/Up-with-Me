@@ -1,0 +1,224 @@
+/* pages/user/index.wxss */
+
+page{
+  --bg:#f6f6f6;
+  --active:rgb(155, 190, 214);
+  --bgcolor:rgb(228, 224, 220);
+}
+/* 布局样式 */
+
+.partnerButton{
+  margin-top: 36rpx;
+  margin-bottom: 20rpx;
+}
+
+/* user && partner */
+image{
+  height: 250rpx;
+  width: 250rpx;
+  border-radius: 45rpx;
+}
+.related{
+  display: flex;
+  justify-content: space-around;
+  margin: 65rpx 0;
+  margin-bottom: -2rpx;
+}
+.related .userImg{
+  height: 250rpx;
+  width: 250rpx;
+  /* border:15rpx dashed #333; */
+  box-shadow: 1rpx 5rpx 1rpx 5rpx  rgba(236, 127, 54, 0.55);
+
+  border-radius: 20rpx;
+}
+.related .userImg::after{
+  content: var(--t);
+  margin: 10rpx;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+}
+.related .and{
+  position: relative;
+  padding: 0;
+  margin: 0;
+  height: 50rpx;
+  width: 50rpx;
+  /* border:15rpx dashed #333; */
+  box-shadow: 1rpx 5rpx 1rpx 5rpx rgba(15, 25, 35, 0.55);
+  top: 100rpx;
+}
+.related .and .dot{
+  height: 51rpx;
+  width: 51rpx;
+  border-radius: 50%;
+  background: black;
+}
+.related .partnerImg{
+  height: 250rpx;
+  width: 250rpx;
+  /* border:15rpx dashed #333; */
+  box-shadow: 1rpx 5rpx 1rpx 5rpx  rgba(31, 61, 197, 0.55);
+  border-radius: 20rpx;
+}
+.related .partnerImg::after{
+  content: var(--t);
+  margin: 10rpx;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+}
+/* menu *** circle */
+.Func_Menu_Circle{
+  /* background-color: var(--); */
+  display: flex;
+  justify-content: space-around;
+}
+.container{
+  /* background-color: var(--clr3); */
+  background-color: transparent;
+  width: 400rpx;
+  height: 400rpx;
+  position: relative;
+}
+.menu-box{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  opacity: 0;
+  transform: scale(0);
+  visibility: hidden;
+  transition: all .5s;
+}
+.menu-box::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  /* background: var(--bgcolor); */
+  background-image: linear-gradient(to top, #c5a03b 0%, #d4a245 49%, #df844f 100%);
+  box-shadow: 1rpx 5rpx 1rpx 15px  rgba(223, 184, 100, 0.55);
+  border-radius: 50%;
+  /* border: */
+  /* border: 12rpx dashed #333; */
+  filter: drop-shadow(0 0 8px var(--active));
+  -webkit-filter:drop-shadow(0 0 8px var(--active));
+  transform: translate3d(0,0,0);
+}
+.menu-box.active{
+  opacity: 1;
+  transform: scale(1);
+  visibility: visible;
+  transition: all .5s;
+}
+.menu-box-item{
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: calc(50% - 40rpx);
+  left: calc(50% - 40rpx);
+  transition: all .5s;
+  transform: rotate(calc(var(--deg) * var(--n))) translateX(-140rpx);
+}
+.func{
+  font-size: 28rpx;
+   font-weight: 800;
+  transition: all .5s;
+}
+.menu-box-item .func{
+  /* 添加反向transform偏移 */
+  transform: rotate(calc(-1 * var(--deg) * var(--n)));
+}
+[data-index ='1']{
+  color: black;
+}
+.menu-box-item.active{
+  transform: rotate(calc(var(--deg) * var(--n))) translateX(-220rpx);
+}
+.menu-box-active{
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  background: var(--active);
+  box-shadow: 0 0 0 10rpx var(--bg);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: all .5s;
+  transform-origin: center;
+  top: calc(50% - 50rpx);
+  left: calc(50% - 50rpx);
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+}
+.menu-box-item.active~.menu-box-active{
+  opacity: 1;
+  visibility: visible;
+  transform: rotate(calc(var(--deg) * var(--n))) translateX(-220rpx);
+}
+.menu-add-box{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: calc(50% - 60rpx);
+  left: calc(50% - 60rpx);
+  background: var(--bg);
+  transition: all .5s;
+}
+.menu-add-box::after{
+  content: "^_^";
+  position: absolute;
+  bottom: -10rpx;
+  font-size: 22rpx;
+  color: #222;
+  font-weight: bold;
+  font-style: italic;
+  transition: all .5s;
+  opacity: 1;
+}
+.menu-add-box .func{
+  transform: scale(1.5);
+}
+.menu-add-box.active::after{
+  font-size: 0;
+  opacity: 0;
+}
+.menu-add-box.active .func{
+  transform: rotate(0deg);
+}
+
+/* Funcbutton - 功能模块 */
+
+.funcButton{
+  margin: 50rpx auto;
+  font-size: 35rpx;
+  font-weight: 900;
+  padding: 8rpx;
+  align-items: center;
+  width: auto;
+  /* border:9rpx dashed  black; */
+  box-shadow: 1rpx 5rpx 1rpx 5rpx  rgba(236, 127, 54, 0.55);
+  border-radius: 12rpx;
+}
+
+.ColorArea {
+  color: var(--clr1);
+  font-size: 80rpx;
+  margin-bottom: 150rpx;
+  border: 15rpx solid var(--clr1);
+  border-radius: 75rpx;
+  padding:0;
+  /* rgb(241, 107, 18) */
+  box-shadow: 1rpx 5rpx 1rpx 5rpx  rgba(236, 127, 54, 0.55);
+}

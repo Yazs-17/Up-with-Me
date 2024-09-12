@@ -1,0 +1,301 @@
+/* pages/partnerFunc/index.wxss */
+
+/* head-mask */
+.top_mask {
+  /* background-image: linear-gradient(to bottom ,var(--clr2), var(--clr1)); */
+  background-image: linear-gradient(120deg, #fed8b1 0%, #fdf1e3 50%,#e4ddb4 100%);
+  height: 150rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+.top_mask .top_text {
+  line-height: 100rpx;
+  font-size: 45rpx;
+  color: #000;
+  font-family: "华文行楷";
+  text-align: center;
+}
+.nav_head {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  display: flex;
+  background: #f8e3cf;
+  box-shadow: 2rpx 5rpx 5rpx 5rpx #ccc;
+}
+.nav_item {
+  flex: 1;
+  text-align: center;
+  font-weight: 600;
+  color: #dddddd;
+}
+.nav_item.active {
+  font-size: 30rpx;
+  color: var(--clr0);
+  transition: 0.3s all linear;
+  transition-delay: 0.1s;
+}
+
+
+
+/* 编辑 module */
+/* mask */
+.all_in_mask{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  background: rgb(78, 78, 78);
+  opacity: 0.8;
+  /* overflow: hidden; */
+  /* overflow: hidden; */
+}
+/* 右下角footer */
+.footer-select{
+  z-index: 3;
+  position: absolute;
+  right: 42rpx;
+  bottom: calc(80rpx + 180rpx);
+  width: 40rpx;
+  height: 40rpx;
+  background-color: black;
+  border-radius: 100%;
+  padding: 40rpx;
+}
+
+.footer-item{
+  z-index: 3;
+  height: 74rpx;
+  position: absolute;
+  right: 58rpx;
+  bottom: calc(240rpx + 180rpx);
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-name{
+  width: 200rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  margin:auto 0 ;
+  margin-right: 20rpx;
+  font-size: 28rpx;
+  background-color: white;
+  border-radius: 10rpx;
+  box-shadow: 3rpx 3rpx 3rpx 3rpx #e0e0e0;
+}
+
+.footer-icon{
+  width: 38rpx;
+  height: 38rpx;
+  border-radius: 100%;
+  background-color: white;
+  padding: 20rpx;
+  box-shadow: 3rpx 3rpx 3rpx 3rpx #e0e0e0;
+}
+
+/* 状态二：有partner模式 */
+.head-title {
+  background: linear-gradient(to right, #fff, #ddd);
+  height: 120rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx;
+  font-size: 25rpx;
+  color: #fff;
+}
+.head-title view {
+  color: #000;
+  line-height: 120rpx;
+  text-align: center;
+}
+.hd {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  display: flex;
+  background: #fff;
+  box-shadow: 0 5rpx 5rpx #ccc;
+  position: relative;
+}
+
+.hd-item {
+  flex: 1;
+  text-align: center;
+  font-weight: 500;
+  color: #333;
+  font-size: 28rpx;
+  position: relative;
+}
+
+.hd-item::after {
+  content: '';
+  position: absolute;
+  /* 设置默认宽度为0 */
+  width: 0%;
+  height: 6rpx;
+  background: linear-gradient(to right, #fff, #000);
+  border-radius: 3rpx;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 4rpx;
+  /* 添加过渡效果 */
+  transition: 0.3s width linear;
+}
+
+.scroll-box {
+  /* margin: 0rpx auto; */
+  /* padding: 0 10rpx; */
+  height: 1417rpx;
+  /* background-color: #ddd; */
+  border-radius: 10rpx;
+  box-shadow: 0 5rpx 25rpx #ccc;
+}
+.item {
+  background: #fff;
+  /* height: 50rpx; */
+  /* line-height: 50rpx; */
+  border-bottom: 3rpx solid #dddddd;
+  /* padding: 0 40rpx; */
+  margin: 10rpx 30rpx;
+  color: #999;
+  /* text-align: center; */
+  padding: 10rpx 50rpx;
+  border-radius: 15rpx;
+  display: flex;
+  flex-direction: row;
+}
+.sure {
+  line-height: 55rpx;
+  background-color: #000;
+  /* margin-right: -15%; */
+  /* margin-top: rpx; */
+  margin-bottom: 10rpx;
+  color: #dddddd;
+  border-radius: 20rpx;
+  width: 112rpx;
+  text-align: center;
+  margin-right: 15rpx;
+}
+
+/* 状态二：有partner模式 */
+        /* 激活选中样式 */
+.hd-item.active {
+  font-size: 30rpx;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #000, #ddd);
+  transition: 0.3s all linear;
+  transition-delay: 0.1s;
+}
+
+.hd-item.active::after {
+  width: 40%;
+}
+
+.item-content {
+  position: relative;
+  background: #fff;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-bottom: 3rpx solid #dddddd;
+  padding: 40rpx;
+  color: #999;
+  text-align: center;
+  border-radius: 15rpx;
+}
+
+.content.pt {
+  /* position: relative; */
+  /* overflow: hidden; */
+  padding-top: 88rpx;
+  /* nav的高度 */
+}
+
+.fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+/* 状态二：有partner模式 */
+      /* 共同习惯修炼--列表 */
+.title_main { 
+  /* align-self: flex-start; */
+  text-align: center;
+  width: 250rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  margin: 10px auto;
+  color: #8D8D8D;
+  font-size: 39rpx;
+  box-shadow: 0 6rpx 15rpx black;
+  border-radius: 15rpx;
+}
+.title_badge { 
+  position: relative;
+  top: -15rpx;
+  margin-left: 10rpx;
+  background-color: #f00;
+  color: #fff;
+  border-radius: 20rpx;
+  padding: 4rpx 8rpx;
+  font-size: 20rpx;
+  text-align: center;
+  width: 50rpx;
+  margin: 10rpx auto;
+}
+
+
+/* 状态一：没有partner模式 */
+.span_Father{
+  margin-top: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 150rpx;
+  font-weight: bold;
+  line-height: 150rpx;
+  letter-spacing: 25rpx;
+  color: #ffffff;
+}
+.span_Father._1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 150rpx;
+  font-weight: bold;
+  line-height: 150rpx;
+  letter-spacing: 25rpx;
+  color: #ffffff;
+  transform-origin: 45% 42%;
+  transform: rotate(-18deg);
+}
+.span_Father span {
+  cursor: pointer;
+  text-shadow: 
+    0px 0px 2px #686868,
+    0px 1px 1px #ddd,
+    0px 2px 1px #d6d6d6,
+    0px 3px 1px #ccc,
+    0px 4px 1px #c5c5c5,
+    0px 5px 1px #c1c1c1,
+    0px 6px 1px #bbb,
+    0px 7px 1px #777,
+    0px 8px 3px rgba(100, 100, 100, 0.4),
+    0px 9px 5px rgba(100, 100, 100, 0.1),
+    0px 10px 7px rgba(100, 100, 100, 0.15),
+    0px 11px 9px rgba(100, 100, 100, 0.2),
+    0px 12px 11px rgba(100, 100, 100, 0.25),
+    0px 13px 15px rgba(100, 100, 100, 0.3);
+  transition: all .1s linear;
+}
+.span_Father span image{
+  height: calc(1rpx * var(--t));
+  width: calc(1rpx * var(--t));
+  position: relative;
+  top: 17rpx;
+}

@@ -1,0 +1,57 @@
+<!--pages/wxCase/sticky/index.wxml-->
+<wxs module="util" src="../util.wxs" />
+<view class="head-title">
+  <view style="font-size: 50rpx;">
+    {{now_time}}
+  </view>
+</view>
+<view class="hd {{isFixed && 'fixed'}}" id="nav">
+  <block wx:for="{{navList}}" wx:key="navList">
+    <view class="hd-item {{nav_type==index && 'active'}}" catchtap="changeType" data-index="{{index}}">{{item}}</view>
+    <!-- <text class="title_badge">{{util.msgFilter(6,5)}}</text> -->
+  </block>
+</view>
+<view class="content {{isFixed && 'pt'}}" id='content'>
+  <view wx:if="{{nav_type == 0}}">
+    <view wx:for="{{pub_Habit_sured}}" wx:key="sure_item">
+      <view class="item" wx:if="{{item.cate - 1 == nav_type}}" data-id="{{index}}" bind:tap="skip_checck_habit">
+        <view class="message-content">
+          <view class="nickname">{{item.habit_name}}</view>
+          <view class="message-text">{{item.habit_target}}</view>
+        </view>
+        <!-- 未完成 -->
+        <view class="sure" data-index="{{index}}" data-index="{{index}}" catch:tap="sure_add">
+          确认
+        </view>
+        <!-- 未完成 -->
+        <view class="sure" data-index="{{index}}" data-index="{{index}}" catch:tap="leave_alone">
+          忽略
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{nav_type == 1}}">
+    <view wx:for="{{pub_Habit_sured}}" wx:key="partnerSured">
+      <view wx:if="{{item.cate==2}}" class="item" data-index="{{index}}">
+        <view class="message-content">
+          <view class="nickname">
+            你好!
+          </view>
+          <view class="message-text">
+            我是<text style="font-size: larger;font-weight: 800;">{{util.filterStr(item.founder,5)}}</text>,一起前进吧！
+          </view>
+        </view>
+        <view class="suref" data-index="{{index}}" data-index="{{index}}" catch:tap="sure_add_f">
+            确认
+          </view>
+          <!-- 未完成 -->
+          <view class="suref" data-index="{{index}}" data-index="{{index}}" catch:tap="leave_alone_f">
+            忽略
+          </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{nav_type == 2}}">
+    <view style="display: flex;justify-content: center;line-height: 150rpx;font-weight: 800;font-size: 45rpx;">模块开发中。。。</view>
+  </view>
+</view>

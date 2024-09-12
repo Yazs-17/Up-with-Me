@@ -1,0 +1,43 @@
+/* pages/partnerFind/index.wxss */
+.All_title {
+  display: flex;
+  justify-content: center;
+  line-height: 90rpx;
+  font-weight: 900;
+  font-size: larger;
+}
+.card_cell_find {
+  padding: 20px 15px;
+  display: flex;
+  justify-content:space-between;
+}
+
+/* 富文本聚集器 */
+.richText {
+  display: block;
+  text-align: justify;
+  text-indent: 2em;
+}
+
+.richText::first-letter {
+  float: left;
+  font-size: 60rpx; /* 首字下沉的字体大小 */
+  line-height: 60rpx;
+  padding-right: 10rpx; /* 首字右侧的间距 */
+  margin-top: -10rpx;
+}
+.desc {
+  position: relative;
+  left: 70vw;
+  color: var(--clr0);
+}
+.startSearch {
+  color: var(--clr1);
+  font-size: 80rpx;
+  margin-bottom: 150rpx;
+  border: 15rpx solid var(--clr1);
+  border-radius: 75rpx;
+  padding:0;
+  /* rgb(241, 107, 18) */
+  box-shadow: 1rpx 5rpx 1rpx 5rpx  rgba(236, 127, 54, 0.55);
+}

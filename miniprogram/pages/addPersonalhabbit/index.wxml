@@ -1,0 +1,62 @@
+<!--pages/addPersonalhabbit/index.wxml-->
+<wxs module="util" src="../util.wxs" />
+
+<view class="mask" wx:if="{{writeTarget}}"></view>
+<view class="submitModal" wx:if="{{writeTarget}}">点击外面任意一处提交</view>
+<view class="mainBody" wx:if="{{writeTarget}}">
+  <view class="textarea-wrp">
+    <textarea maxlength="150" auto-focus="true" bindblur="bindSubmit" auto-height value="{{target}}" placeholder="在这里输入你通过这个习惯想要达到的目标吧o(*≧▽≦)ツ┏━┓" />
+  </view>
+</view>
+<view class="outerMost">
+  <view class="cards_shell">
+    <view class="card_cell">
+      <view class="card_cell_title">习惯名称</view>
+      <input style="z-index: 1;" maxlength="10" placeholder="请输入习惯名称(10字以内)" placeholder-class="card_cell_title-placeholder" value="{{habitName}}" bindinput="bindNamechange" />
+    </view>
+    <view class="card_cell">
+      <view class="card_cell_title">预期目标</view>
+      <view class="card_cell_title-placeholder" bind:tap="changeAreavisible">{{util.filterStr(target,15) || '点击填写预期目标(150字以内)'}}</view>
+    </view>
+  </view>
+  <view class="cards_shell">
+    <view class="card_cell inline">
+      <view>执行日期</view>
+      <picker mode="date" bindchange="onDateChange_1" style="margin-left: 8vw;">
+        <view class="card_cell_title-placeholder">{{date_1}}</view>
+      </picker>
+      <text style="margin-left: 3vw;">to</text>
+      <picker mode="date" bindchange="onDateChange_2" style="margin-left: 3vw;">
+        <view class="card_cell_title-placeholder">{{date_2 || "点击-即可-选择"}}</view>
+      </picker>
+    </view>
+    <view class="card_cell">
+      <view>日程安排</view>
+      <view class="line-container">
+        <block wx:for="{{points}}" wx:key="index">
+          <view bindtap="activatePoint" data-index="{{index}}" class="point {{item.active ? 'active' : ''}}" style="--t:'{{weekDay[index]}}';--idx:{{controlKey[index]}}"></view>
+          <view wx:if="{{index < points.length - 1}}" class="line {{item.active && points[index + 1].active ? 'active' : ''}}"></view>
+        </block>
+      </view>
+    </view>
+    <view class="card_cell">
+      <view>时长设置（分钟）</view>
+        <slider min="1" max="60" show-value activeColor="#000"value="{{time}}" bindchange="slideChange_time"/>
+    </view>
+    <view class="card_cell inline">
+      <view>今日习惯状态</view>
+      <view style="margin-left: 25%;">{{finished}}</view>
+      <view style="margin-left: 5%;">
+          <!-- <mp-checkbox ext-class="custom-fault-checkbox"></mp-checkbox> -->
+          <checkbox-group bindchange="checkbox_Change_freq">
+            <checkbox value="1" checked="{{freq}}"/>
+          </checkbox-group>
+          <!-- <slider min="0" max="1" activeColor="#000" value="{{freq}}" bindchange="slideChange_freq"/> -->
+      </view>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="reset" bindtap="reset">重置</view>
+    <view class="save" bindtap="save">保存</view>
+  </view>
+</view>
