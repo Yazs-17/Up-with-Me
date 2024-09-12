@@ -22,7 +22,7 @@ App({
   async initcloud() {
     wx.cloud.init({
       traceUser: true,
-      env: 'cloud1-7g8auzu50049a843'
+      env: '' // 替换成你自己的环境id
     })
     this.cloud = () => {
       return wx.cloud 
